@@ -79,7 +79,7 @@ behaviors:
 ![beta](https://user-images.githubusercontent.com/102538132/204516830-05876f9b-ac4a-439e-beb2-3d40481d8f6c.png)
 
 
-Изменим epsilon c 0.2 на 1.2:
+1. Изменим epsilon c 0.2 на 1.2:
 
 
 ```py
@@ -123,7 +123,7 @@ behaviors:
 ![beta](https://user-images.githubusercontent.com/102538132/204514808-9c5383b5-4fa1-4e93-8541-c0a60a6b2705.png)
 
 
-Изменим buffer_size c 10240 на 150:
+2. Изменим buffer_size c 10240 на 150:
 ```py
 behaviors:
   Economic:
@@ -167,7 +167,7 @@ behaviors:
 
 
 
-Изменим batch_size c 1024 на 4096:
+3. Изменим batch_size c 1024 на 4096:
 
 
 ```py
@@ -210,7 +210,7 @@ behaviors:
 ![beta](https://user-images.githubusercontent.com/102538132/204518020-153ce0b2-79ea-4dc3-8cf1-8d1aa207d437.png)
 
 
-Изменим lambd c 0.95 на 0.1:
+4. Изменим lambd c 0.95 на 0.1:
 
 
 ```py
@@ -254,7 +254,7 @@ behaviors:
 ![beta](https://user-images.githubusercontent.com/102538132/204520162-434a851a-9e2a-457f-93b6-027be77b7900.png)
 
 
-Изменим num_layers c 2 на 100:
+5. Изменим num_layers c 2 на 100:
 ```py
 behaviors:
   Economic:
