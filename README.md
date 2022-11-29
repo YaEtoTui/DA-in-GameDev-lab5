@@ -76,10 +76,10 @@ behaviors:
 ```
 ![Снимок экрана 2022-11-29 143837](https://user-images.githubusercontent.com/102538132/204494781-e6f67121-1753-4e24-9805-551714c01211.png)
 ![данные](https://user-images.githubusercontent.com/102538132/204512669-c98d0b34-e69e-4af0-abb9-55140ba90e7c.png)
+![beta](https://user-images.githubusercontent.com/102538132/204516830-05876f9b-ac4a-439e-beb2-3d40481d8f6c.png)
 
 
-
-Изменим epsilon c 0.2 на 0.4:
+Изменим epsilon c 0.2 на 1.2:
 
 
 ```py
@@ -92,7 +92,7 @@ behaviors:
       learning_rate: 3.0e-4
       learning_rate_schedule: linear
       beta: 1.0e-2
-      epsilon: 0.4 ###
+      epsilon: 1.2 ###
       lambd: 0.95
       num_epoch: 3      
     network_settings:
@@ -118,6 +118,9 @@ behaviors:
 
 Получается такой график:
 
+
+![данные](https://user-images.githubusercontent.com/102538132/204514150-dd8c2fce-36bf-42cb-95cf-c6e36ffb4fb0.png)
+![beta](https://user-images.githubusercontent.com/102538132/204514808-9c5383b5-4fa1-4e93-8541-c0a60a6b2705.png)
 
 
 Изменим buffer_size c 10240 на 150:
@@ -160,14 +163,19 @@ behaviors:
 
 
 ![текущ_знач](https://user-images.githubusercontent.com/102538132/204511466-e1a3da3b-f15f-43fe-be3c-066c9c4cd793.png)
+![beta](https://user-images.githubusercontent.com/102538132/204515819-b5326f52-aa77-4b60-b2b0-35a24672ce55.png)
 
 
 
-
+Изменим batch_size c 1024 на 4096:
 ```py
 
 
 ```
+
+
+
+
 ```py
 
 
