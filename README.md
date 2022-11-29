@@ -250,14 +250,51 @@ behaviors:
 Получаются такие графики:
 
 
+![data](https://user-images.githubusercontent.com/102538132/204520149-87fa8e16-9eef-479f-8f20-db5e197a8fc4.png)
+![beta](https://user-images.githubusercontent.com/102538132/204520162-434a851a-9e2a-457f-93b6-027be77b7900.png)
+
+
+Изменим num_layers c 2 на 100:
 ```py
-
-
+behaviors:
+  Economic:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 3.0e-4
+      learning_rate_schedule: linear
+      beta: 1.0e-2
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3      
+    network_settings:
+      normalize: false
+      hidden_units: 128
+      num_layers: 100
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    checkpoint_interval: 500000
+    max_steps: 750000
+    time_horizon: 64
+    summary_freq: 5000
+    self_play:
+      save_steps: 20000
+      team_change: 100000
+      swap_steps: 10000
+      play_against_latest_model_ratio: 0.5
+      window: 10
 ```
-```py
 
 
-```
+Получаются такие графики:
+
+
+![data](https://user-images.githubusercontent.com/102538132/204522047-9c4dc5e9-7892-4924-baab-91b3f81ebcf5.png)
+![beta](https://user-images.githubusercontent.com/102538132/204522059-247bf24c-90c8-4d55-b186-95aca2f9c0e9.png)
+
 
 ## Задание 2
 ### Опишите результаты, выведенные в TensorBoard.
