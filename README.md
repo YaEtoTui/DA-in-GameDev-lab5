@@ -35,45 +35,80 @@
 - ✨Magic ✨
 
 ## Цель работы
-Познакомиться с Перцептроном.
+Интеграция экономической системы в проект Unity и обучение ML-Agent
 
 ## Задание 1
-### В проекте Unity реализовать перцептрон, который умеет производить вычисления:
- - OR | дать комментарии о корректности работы
- - AND | дать комментарии о корректности работы
- - NAND | дать комментарии о корректности работы
- - XOR | дать комментарии о корректности работы
+### Измените параметры файла. yaml-агента и определить какие параметры и как влияют на обучение модели.
 
+Изначальные данные и результаты:
 
+```py
+behaviors:
+  Economic:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 3.0e-4
+      learning_rate_schedule: linear
+      beta: 1.0e-2
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3      
+    network_settings:
+      normalize: false
+      hidden_units: 128
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    checkpoint_interval: 500000
+    max_steps: 750000
+    time_horizon: 64
+    summary_freq: 5000
+    self_play:
+      save_steps: 20000
+      team_change: 100000
+      swap_steps: 10000
+      play_against_latest_model_ratio: 0.5
+      window: 10
+```
+![Снимок экрана 2022-11-29 143837](https://user-images.githubusercontent.com/102538132/204494781-e6f67121-1753-4e24-9805-551714c01211.png)
 
-
-## Задание 2
-### Построить графики зависимости количества эпох от ошибки обучения. Указать от чего зависит необходимое количество эпох обучения.
-
-
-## Задание 3
-### Построить визуальную модель работы перцептрона на сцене Unity.
 
 
 
 ```py
-public class ChangeColor : MonoBehaviour
-{
-    static double value = 0;
 
-    public void OnTriggerEnter(Collider other) {
-        if (value == 0)
-            other.gameObject.GetComponent<Renderer>().material.color = Color.white;
-        else
-            other.gameObject.GetComponent<Renderer>().material.color = Color.black;
-    }
-
-    public static void OnSearchValue(double answer) {
-        value = answer;
-    }
-}
 
 ```
+```py
+
+
+```
+```py
+
+
+```
+```py
+
+
+```
+```py
+
+
+```
+```py
+
+
+```
+
+## Задание 2
+### Опишите результаты, выведенные в TensorBoard.
+
+
+
 
 ## Выводы
 
