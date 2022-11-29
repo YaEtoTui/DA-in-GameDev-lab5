@@ -224,7 +224,7 @@ behaviors:
       learning_rate_schedule: linear
       beta: 1.0e-2
       epsilon: 0.2
-      lambd: 0.1
+      lambd: 0.1 ###
       num_epoch: 3      
     network_settings:
       normalize: false
