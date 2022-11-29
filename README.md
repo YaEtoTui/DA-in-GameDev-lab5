@@ -75,6 +75,9 @@ behaviors:
       window: 10
 ```
 ![Снимок экрана 2022-11-29 143837](https://user-images.githubusercontent.com/102538132/204494781-e6f67121-1753-4e24-9805-551714c01211.png)
+![данные](https://user-images.githubusercontent.com/102538132/204512669-c98d0b34-e69e-4af0-abb9-55140ba90e7c.png)
+
+
 
 Изменим epsilon c 0.2 на 0.4:
 
@@ -112,10 +115,55 @@ behaviors:
       window: 10
 
 ```
-```py
 
+Получается такой график:
+
+
+
+Изменим buffer_size c 10240 на 150:
+```py
+behaviors:
+  Economic:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 150 ###
+      learning_rate: 3.0e-4
+      learning_rate_schedule: linear
+      beta: 1.0e-2
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3      
+    network_settings:
+      normalize: false
+      hidden_units: 128
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    checkpoint_interval: 500000
+    max_steps: 750000
+    time_horizon: 64
+    summary_freq: 5000
+    self_play:
+      save_steps: 20000
+      team_change: 100000
+      swap_steps: 10000
+      play_against_latest_model_ratio: 0.5
+      window: 10
 
 ```
+
+
+Получается такой график:
+
+
+![текущ_знач](https://user-images.githubusercontent.com/102538132/204511466-e1a3da3b-f15f-43fe-be3c-066c9c4cd793.png)
+
+
+
+
 ```py
 
 
